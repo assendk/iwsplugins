@@ -2,7 +2,7 @@
 /*
 Plugin Name: IWS Icons Grid
 Plugin URI: https://assen.xyz/
-Description: Displays a list of subcategory logos with customizable image size.
+Description: Displays a list of subcategory logos with customizable image size. [subcategory_grid_1 category="wines"], params 'use_acf_logo' => 'true','image_size' => '150px'
 Version: 1.4
 Author: Assen Kovachev
 Author URI: https://assen.xyz/
@@ -16,7 +16,7 @@ function iws_spirits_subcategory_list_shortcode_3($atts) {
 	$atts = shortcode_atts(array(
 		'category' => 'wines',
 		'use_acf_logo' => 'true',
-		'image_size' => '150px', // Default image size
+		'image_size' => '120px', // Default image size
 	), $atts);
 
 	// Get the category object
@@ -28,26 +28,32 @@ function iws_spirits_subcategory_list_shortcode_3($atts) {
 	// Start the output with a style block for our image size
 	$output = '
 		<style>
-			.list-container {
-				list-style-type: none;
-				padding-left: 0;
-				vertical-align: middle;
-			}
-			.list-container li {
-				text-align: center;
-				margin-bottom: 10px;
-				padding: 30px;
-				display: inline-block;
-			}
-			.list-container img {
-				width: ' . esc_attr($atts['image_size']) . ';
-				height: auto;
-			}
+			.list-container-1 {
+	list-style-type: none;
+	padding: 0;
+	display: flex;        /* This */
+	flex-wrap: wrap;       /* This */
+	justify-content: center; /* And this */
+}
+
+.list-container-1 li {
+	text-align: center;
+	margin-bottom: 8px;
+	padding: 15px;
+	/* display: inline-block; Remove this */
+	flex: 0 1 auto;        /* Add this */
+}
+
+.list-container-1 img {
+	width: ' . esc_attr($atts['image_size']) . ';
+	height: auto;
+}
+
 		</style>
 	';
 
 	// Start the list container
-	$output .= '<ul class="list-container">';
+	$output .= '<ul class="list-container-1">';
 
 	// Check if the specified category exists
 	if ($category && !is_wp_error($category)) {

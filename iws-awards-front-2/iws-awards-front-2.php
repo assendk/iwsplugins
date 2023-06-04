@@ -52,7 +52,6 @@ function award_carousel_4($atts) {
 
 	$output .= '<div class="swiper-container-4" style="height: '. $atts['height'] .'">';
 	$output .= '<div class="swiper mySwiper4 swiper-grid swiper-grid-column swiper-backface-hidden">';
-//	$output .= '<div class="swiper-container mySwiper swiper-initialized swiper-horizontal swiper-grid swiper-grid-column swiper-backface-hidden">';
 	$output .= '<div class="swiper-wrapper">';
 	if ( ! empty( $term_query->terms ) ) {
 
