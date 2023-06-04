@@ -3,7 +3,7 @@
 Plugin Name: IWS Awards Front Carousel 2
 Plugin URI: https://assen.xyz/
 Description: Displays a list of subcategory logos with customizable image size. [award_frontpage_crl]
-Version: 2.0
+Version: 2.1
 Author: Assen Kovachev
 Author URI: https://assen.xyz/
 License: GPLv2 or later
@@ -40,7 +40,7 @@ add_filter('script_loader_tag', 'add_defer_attribute', 10, 2);
 function award_carousel_4($atts) {
 
 	$atts = shortcode_atts(array(
-		'display' => 'grid',
+		'height' => '280px',
 	), $atts);
 
 	$term_query = new WP_Term_Query( array(
@@ -50,7 +50,7 @@ function award_carousel_4($atts) {
 	) );
 	$output = '';
 
-	$output .= '<div class="swiper-container-4">';
+	$output .= '<div class="swiper-container-4" style="height: '. $atts['height'] .'">';
 	$output .= '<div class="swiper mySwiper4 swiper-grid swiper-grid-column swiper-backface-hidden">';
 //	$output .= '<div class="swiper-container mySwiper swiper-initialized swiper-horizontal swiper-grid swiper-grid-column swiper-backface-hidden">';
 	$output .= '<div class="swiper-wrapper">';

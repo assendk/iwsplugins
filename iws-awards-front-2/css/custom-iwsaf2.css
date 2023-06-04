@@ -1,9 +1,9 @@
+.swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
+    bottom: -2px;
+}
 .swiper-container-4 {
     position: relative;
-    height: 500px;
-
-    background: #73ccff !important;
-    color: red;
+    height: 280px;
     margin: 0;
     padding: 0;
 }
@@ -18,32 +18,42 @@
 .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: rgba(255, 165, 80, 0.74);
     height: calc((100% - 30px) / 2) !important;
 
-    /* Center slide text vertically */
-    /*display: flex;*/
-    /*justify-content: center;*/
-    /*align-items: center;*/
+}
+
+.award-logo-wrapper4 {
+    display: flex; /* make this a flex container */
+    justify-content: flex-start; /* align children along the horizontal line */
+    align-items: center; /* align children vertically in the middle */
+}
+
+.award-name4 {
+    /*margin-left: 10px; !* add some space between the logo and the name *!*/
+    text-align: center; /* center the text */
+    flex-grow: 1; /* allows the element to grow and take up any remaining space */
 }
 
 .award-logo-item4 {
-
+    display: flex; /* make this a flex container */
+    justify-content: flex-start; /* align children along the horizontal line */
+    align-items: center; /* align children vertically in the middle */
 }
-.award-logo-container4 {
-    position: relative;
 
-    /*margin-right: 10px;*/
-    width: 127px; /* makes sure the image doesn't overflow its container */
+.award-logo-container4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+    min-width: 127px;
     height: 113px;
     background: url("/wp-content/uploads/2023/05/award_mask.png") center no-repeat;
 }
+
 .award-logo-container4 img {
     width: 73px;
     height: 72px;
-    position: absolute;
-    top: 12px;
-    left: 27px;
     mix-blend-mode: multiply;
+    transform: translateY(-8px);
 }
 
