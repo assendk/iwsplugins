@@ -14,9 +14,9 @@ Text Domain: subcategory-list
 function my_iwsspirits_enqueue_styles() {
 	if ( ! wp_style_is( 'my-bundle-style', 'enqueued' ) ) {
 		// CSS file from bundle is not loaded, enqueue it
-		wp_enqueue_style( 'my-iwsaf2-css-1', plugin_dir_url( __FILE__ ) . 'css/swiper-bundle.min.css', array(), '1.0' );
+		wp_enqueue_style( 'my-spirits-css-1', plugin_dir_url( __FILE__ ) . 'css/swiper-bundle.min.css', array(), '1.0' );
 	}
-	wp_enqueue_style( 'my-iwsaf2-css-2', plugin_dir_url( __FILE__ ) . 'css/custom-spirits-home.css', array(), '1.0' );
+	wp_enqueue_style( 'my-spirits-css-2', plugin_dir_url( __FILE__ ) . 'css/custom-spirits-home.css', array(), '1.0' );
 }
 add_action( 'wp_enqueue_scripts', 'my_iwsspirits_enqueue_styles' );
 

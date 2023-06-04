@@ -1,7 +1,7 @@
 .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
     bottom: -2px;
 }
-.swiper-container-4 {
+.swiper-container-1 {
     position: relative;
     height: 280px;
     margin: 0;
@@ -18,29 +18,29 @@
 .swiper-slide {
     text-align: center;
     font-size: 18px;
-    height: calc((100% - 30px) / 2) !important;
+    height: calc((100% - 30px) / 4) !important;
 
 }
 
-.award-logo-wrapper4 {
+.award-logo-wrapper1 {
     display: flex; /* make this a flex container */
     justify-content: flex-start; /* align children along the horizontal line */
     align-items: center; /* align children vertically in the middle */
 }
 
-.award-name4 {
+.award-name1 {
     /*margin-left: 10px; !* add some space between the logo and the name *!*/
     text-align: center; /* center the text */
     flex-grow: 1; /* allows the element to grow and take up any remaining space */
 }
 
-.award-logo-item4 {
+.award-logo-item1 {
     display: flex; /* make this a flex container */
     justify-content: flex-start; /* align children along the horizontal line */
     align-items: center; /* align children vertically in the middle */
 }
 
-.award-logo-container4 {
+.award-logo-container1 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,7 +50,7 @@
     background: url("/wp-content/uploads/2023/05/award_mask.png") center no-repeat;
 }
 
-.award-logo-container4 img {
+.award-logo-container1 img {
     width: 73px;
     height: 72px;
     mix-blend-mode: multiply;
