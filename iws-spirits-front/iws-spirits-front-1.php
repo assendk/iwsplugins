@@ -29,14 +29,6 @@ function spirits_plugin_enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'spirits_plugin_enqueue_scripts' );
 
-//function add_defer_attribute($tag, $handle) {
-//	if ('my-script' === $handle) {
-//		return str_replace(' src', ' defer src', $tag);
-//	}
-//	return $tag;
-//}
-//add_filter('script_loader_tag', 'add_defer_attribute', 10, 2);
-
 function iws_spirits_carousel_2($atts) {
 	// Extract the shortcode attributes
 	$atts = shortcode_atts(array(
@@ -70,8 +62,8 @@ function iws_spirits_carousel_2($atts) {
 
 	// Initialize the output variable
 	$output = '';
-	$output .= '<div class="swiper-container-'.$cid.'" style="height: '. $atts['height'] .'">';
-	$output .= '<div class="swiper mySwiper'.$cid.' swiper-grid swiper-grid-column swiper-backface-hidden">';
+	$output .= '<div class="swiper-container-1" style="height: '. $atts['height'] .'">';
+	$output .= '<div class="swiper mySwiper1 swiper-grid swiper-grid-column swiper-backface-hidden">';
 	$output .= '<div class="swiper-wrapper">';
 
 	// Check if the specified category exists

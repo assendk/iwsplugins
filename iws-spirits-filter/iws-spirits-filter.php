@@ -53,15 +53,27 @@ function iws_spirits_filter($atts) {
 	}
 
 	// Initialize the output variable
-	$output = '<div class="filter-container">
-				    <button class="filter active" data-group="all">All</button>
-				    <button class="filter" data-group="wine">Wine</button>
-				    <button class="filter" data-group="vodka">Vodka</button>
-				</div>';
+
 
   $output = '<div>';
 
 	// Check if the specified category exists
+	$output = '<div class="filter-container">
+				    <button class="filter active" data-group="all">All</button>
+				    <button class="filter" data-group="vodka">Vodka</button>
+				    <button class="filter" data-group="whiskey">Whiskey</button>
+				    <button class="filter" data-group="gin">Gin</button>
+				    <button class="filter" data-group="rum">Rum</button>
+				    <button class="filter" data-group="tequila">Tequila</button>
+				    <button class="filter" data-group="rakia">Rakia</button>
+				    <button class="filter" data-group="mastika">Mastika</button>
+				    <button class="filter" data-group="ouzo">Ouzo</button>
+				    <button class="filter" data-group="brendy">Brendy</button>
+				</div>';
+
+	$output .= '<ul class="image-list">';
+
+// Check if the specified category exists
 	if ($category && !is_wp_error($category)) {
 		// Get the products of the specified category
 		$products = get_posts(array(
@@ -98,22 +110,21 @@ function iws_spirits_filter($atts) {
 
 				// Display the product brand logo
 				if ($brand_logo && $brand_logo[0]) {
-					$output .= '<div class="swiper-slide ' . $tag_classes . '">';
+					$output .= '<li class="' . $tag_classes . '">';
 					$output .= '<a href="' . $product_url . '">';
 					$output .= '<img src="' . $brand_logo[0] . '" alt="' . $product->post_title . '">';
 					$output .= '</a>';
-					$output .= '</div>';
+					$output .= '</li>';
 				}
 			}
 		} else {
-			$output = 'No products found.';
+			$output = '<li>No products found.</li>';
 		}
 	} else {
-		$output = 'The specified category does not exist.';
+		$output = '<li>The specified category does not exist.</li>';
 	}
 
-	$output .= "</div>";
-
+	$output .= "</ul>";
 
 	return $output;
 }
