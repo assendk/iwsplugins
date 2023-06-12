@@ -33,7 +33,8 @@ function print_tax_for_woo() {
 				'numberposts' => 1, // We only need to know if there's at least one
 				'tax_query' => array(
 					array(
-						'taxonomy' => $taxonomy_slug,
+//						'taxonomy' => $taxonomy_slug,
+						'taxonomy' => 'awards',
 						'terms' => $term->term_id
 					)
 				)
@@ -41,7 +42,8 @@ function print_tax_for_woo() {
 
 			// If there's at least one product associated with this term
 			if ($posts) {
-				$output .= '<h1>' . $taxonomy->label . ': ' . $term->name . '</h1>';
+				$output .= '<h1>' . $taxonomy->label . ': ' . $term->name . '::' .  $term->slug . '</h1>';
+//				$output .= '<h1>' . $taxonomy->label . ': ' . $term->name . json_encode($term) . '</h1>';
 			}
 		}
 	}
