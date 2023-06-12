@@ -50,7 +50,7 @@ function award_carousel_4($atts) {
 	) );
 	$output = '';
 
-	$output .= '<div class="swiper-container-4" style="height: '. $atts['height'] .'">';
+	$output .= '<div class="swiper-container swiper4" style="height: '. $atts['height'] .'">';
 	$output .= '<div class="swiper mySwiper4 swiper-grid swiper-grid-column swiper-backface-hidden">';
 	$output .= '<div class="swiper-wrapper">';
 	if ( ! empty( $term_query->terms ) ) {
@@ -61,8 +61,6 @@ function award_carousel_4($atts) {
 
 			$logo = get_field('logo', $term);
 			$output .= '<div class="swiper-slide">';
-
-//			$output .= 'TEST';
 
 				if ($logo) {
 					$output .= '<div class="award-logo-item4">'; // start award-logo-item div
@@ -78,9 +76,6 @@ function award_carousel_4($atts) {
 			$output .= '</div>';
 
 		}
-//      <div class="swiper-slide">Slide 1</div>
-//      <div class="swiper-slide">Slide 2</div>
-//      <div class="swiper-slide">Slide 3</div>
 
 	$output .= '</div>';
       $output .= '<div class="swiper-pagination"></div>';

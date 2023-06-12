@@ -15,7 +15,7 @@
     margin-right: auto;
 }
 
-.swiper-slide {
+.mySwiper1  .swiper-slide {
     text-align: center;
     font-size: 18px;
     height: calc((100% - 30px) / 4) !important;

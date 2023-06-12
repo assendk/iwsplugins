@@ -62,7 +62,7 @@ function iws_spirits_carousel_2($atts) {
 
 	// Initialize the output variable
 	$output = '';
-	$output .= '<div class="swiper-container-1" style="height: '. $atts['height'] .'">';
+	$output .= '<div class="swiper-container swiper1" style="height: '. $atts['height'] .'">';
 	$output .= '<div class="swiper mySwiper1 swiper-grid swiper-grid-column swiper-backface-hidden">';
 	$output .= '<div class="swiper-wrapper">';
 

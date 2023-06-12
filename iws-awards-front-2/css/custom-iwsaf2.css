@@ -15,11 +15,10 @@
     margin-right: auto;
 }
 
-.swiper-slide {
+#swiper-wrapper-f147cec79c7a5d17 .swiper-slide, .mySwiper4 .swiper-slide  {
     text-align: center;
     font-size: 18px;
     height: calc((100% - 30px) / 2) !important;
-
 }
 
 .award-logo-wrapper4 {
