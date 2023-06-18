@@ -38,7 +38,7 @@ function award_list_shortcode($atts) {
 			if ($logo) {
 				$output .= '<div class="award-logo-item-container">';
 				$output .= '<div class="award-logo-container"><a href="' . $url . '"><img src="' . esc_url($logo) . '" alt="' . esc_attr($term->name) . '"/></a></div>';
-				$output .= '<div class="award-name">' . $term->name . "--" . $visibility. '</div>';
+				$output .= '<div class="award-name">' . $term->name . '</div>';
 				$output .= '</div>';
 			} else {
 				$output .= 'No logo found';

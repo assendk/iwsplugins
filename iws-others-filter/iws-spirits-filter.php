@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: IWS Spirits Filter Grid
+Plugin Name: IWS Others Filter Grid
 Plugin URI: https://assen.xyz/
-Description: Displays a list of subcategory logos with customizable image size. [spirits_filter_grid]
+Description: Displays a list of subcategory logos with customizable image size. [others_filter_grid]
 Version: 1.0
 Author: Assen Kovachev
 Author URI: https://assen.xyz/
@@ -21,7 +21,7 @@ function spirits_plugin_enqueue_filter_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'spirits_plugin_enqueue_filter_scripts' );
 
-function iws_spirits_filter($atts) {
+function iws_others_filter($atts) {
 	// Extract the shortcode attributes
 	$atts = shortcode_atts(array(
 		'category' => 'spirits',
@@ -58,8 +58,7 @@ function iws_spirits_filter($atts) {
   $output = '<div>';
 
 	// Check if the specified category exists
-	if ($atts['category'] == 'spirits') {
-		$output = '<div class="filter-container">
+	$output = '<div class="filter-container">
 				    <button class="filter active" data-group="all">All</button>
 				    <button class="filter" data-group="vodka">Vodka</button>
 				    <button class="filter" data-group="whiskey">Whiskey</button>
@@ -71,18 +70,6 @@ function iws_spirits_filter($atts) {
 				    <button class="filter" data-group="ouzo">Ouzo</button>
 				    <button class="filter" data-group="brendy">Brendy</button>
 				</div>';
-	} elseif ($atts['category'] == 'others') {
-		$output = '<div class="filter-container">
-				    <button class="filter active" data-group="all">All</button>
-				    <button class="filter" data-group="menta">Menta</button>
-				</div>';
-	} else {
-		$output = '<div class="filter-container">
-				    <button class="filter active" data-group="all">All</button>
-				</div>';
-	}
-
-
 
 	$output .= '<ul class="image-list">';
 
@@ -141,4 +128,4 @@ function iws_spirits_filter($atts) {
 
 	return $output;
 }
-add_shortcode('spirits_filter_grid', 'iws_spirits_filter');
+add_shortcode('others_filter_grid', 'iws_others_filter');
