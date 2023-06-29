@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: IWS Spirits Home Carousel
+Plugin Name: IWS One Row Carousel
 Plugin URI: https://assen.xyz/
 Description: Displays a list of subcategory logos with customizable image size. [award_frontpage_crl]
 Version: 1.0
@@ -12,11 +12,19 @@ Text Domain: subcategory-list
 
 // Styles and Scripts Enqueue
 function my_iwsspirits_enqueue_styles() {
+	if ( ! wp_style_is( 'my-bundle-style', 'enqueued' ) ) {
+		// CSS file from bundle is not loaded, enqueue it
+		wp_enqueue_style( 'my-spirits-css-1', plugin_dir_url( __FILE__ ) . 'css/swiper-bundle.min.css', array(), '1.0' );
+	}
 	wp_enqueue_style( 'my-spirits-css-2', plugin_dir_url( __FILE__ ) . 'css/custom-spirits-home.css', array(), '1.0' );
 }
 add_action( 'wp_enqueue_scripts', 'my_iwsspirits_enqueue_styles' );
 
 function spirits_plugin_enqueue_scripts() {
+	if ( ! wp_script_is( 'swiper-bundle', 'enqueued' ) ) {
+		// Swiper script is not loaded, enqueue it
+		wp_enqueue_script( 'swiper-bundle', plugin_dir_url( __FILE__ ) . 'js/swiper-bundle.min.js', array(), '1.0.0', true );
+	}
 	wp_enqueue_script( 'my-spirits-js-1', plugin_dir_url( __FILE__ ) . 'js/customjs-spirits-home.js', array(), '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'spirits_plugin_enqueue_scripts' );
@@ -26,11 +34,11 @@ function iws_spirits_carousel_2($atts) {
 	$atts = shortcode_atts(array(
 		'category' => 'spirits',
 		'use_acf_logo' => 'true',
-		'acf_field' => 'brand_logo',
+		'acf_field' => 'white_logo',
 		'logo_color' => 'default', // New attribute
 		'grid' => '6',
 		'rows' => 'auto',
-		'columns' => '4',
+		'columns' => '5',
 		'carrows' => 'true',
 		'cid' => '1',
 		'height' => '480px',
